@@ -1,0 +1,81 @@
+import java.util.Scanner;
+
+public class Calculator {
+
+
+    public static double getNum() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number:");
+        double num;
+        num = scanner.nextDouble();
+        return num;
+    }
+
+    public static int getSum(int a1, int a2) {
+        int result = a1 + a2;
+        System.out.println(a1 + a2);
+        return result;
+    }
+
+    public static int getSub(int s1, int s2) {
+        int resolt1 = s1 - s2;
+        System.out.println(s1 - s2);
+        return resolt1;
+    }
+
+    public static double getM(double m1, double m2, double m3) {
+        double result2 = m1 * m2 * m3;
+        System.out.println(getM(m1, m2, m3));
+        return result2;
+    }
+
+    public static int getDel(int d1, int d2) {
+        int resolt3 = d1 / d2;
+        System.out.println(d1 / d2);
+        return resolt3;
+    }
+
+    //    Сделать в калькуляторе метод подсчета используя switch case
+    public void switchCalc(double num1, double num2, char operation) {
+        double result5;
+        switch (operation) {
+            case '+':
+                result5 = num1 + num2;
+                System.out.println("Result: " + result5);
+                break;
+            case '-':
+                result5 = num1 - num2;
+                System.out.println("Result: " + result5);
+                break;
+            case '*':
+                result5 = num1 * num2;
+                System.out.println("Result: " + result5);
+                break;
+            case '/':
+                result5 = num1 / num2;
+                System.out.println("Result: " + result5);
+                break;
+            default:
+                System.out.println("No valid");
+        }
+    }
+
+
+
+МИХАИЛ,ОБРАТИТЕ ,ПОЖАЛУЙСТА,ВНИМАНИЕ,У МЕНЯ НЕ ПОЛУЧАЕТСЯ С ВВЕДЕНИЕМ ДАННЫХ ТУТ
+    //дописать запрос "Введите операцию","хотите продолжить"
+    public static char getContinue() {
+        char operation;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter operation:");
+        return scanner.next().charAt(0);
+    }
+
+    public void getContinueAnswer() {
+        System.out.println("Do you want to continue? yes/no");
+        
+        if (Scanner.next().charAt() == 'y') {
+            switchCalc(getNum(), getNum(), getContinue());
+
+        }
+    }
